@@ -1,8 +1,8 @@
-Implemented user Authentication and authorisation using JWT. <br>
-Implemented Search and Filtering functionality. <br>
-User can add a new Program/Course . <br>
-User can update a program added by him. <br>
-Users who are not the owner of a particular program can see the program details without having ability to Edit. <br>
+•Implemented user Authentication and authorisation using JWT. <br>
+•Implemented Search and Filtering functionality. <br>
+•User can add a new Program/Course . <br>
+•User can update a program added by him. <br>
+•Users who are not the owner of a particular program can see the program details without having ability to Edit. <br>
 
 
 
