@@ -4,6 +4,10 @@
 • User can update a program added by him. <br>
 • Users who are not the owner of a particular program can see the program details without having ability to Edit. <br>
 
+### Demo Video    
+
+https://github.com/panghal007/Programs_Dash/assets/108991691/3149c4ca-719c-4799-9036-3af6a45733d7 
+
 |                                             Login Page                                                  |                                              Signup Page                                                |
 | ----------------------                                                                                  | ----------------------                                                                                  |
 | ![6](https://github.com/panghal007/Programs_Dash/assets/108991691/63405b1b-cc0a-4bb1-acac-b4363afca749) | ![5](https://github.com/panghal007/Programs_Dash/assets/108991691/db0a5dc2-6e78-42e8-8ceb-10c004847ef7) |
@@ -16,6 +20,4 @@
 
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### Demo Video    
 
-https://github.com/panghal007/Programs_Dash/assets/108991691/3149c4ca-719c-4799-9036-3af6a45733d7 
