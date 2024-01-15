@@ -1,0 +1,209 @@
+/* ProgramsDashboard.css */
+/* ProgramsDashboard.css */
+
+.programs-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 50px;
+  }
+  
+  .programs-dashboard {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  
+  .left-section, .right-section {
+    flex: 0 0 20%;
+    padding: 20px;
+    margin-top: 0px;
+  }
+  
+  .middle-section {
+    flex: 0 0 60%;
+    padding: 20px;
+  }
+  
+  .input-container {
+    margin-bottom: 15px;
+  }
+  
+  .button-container {
+    margin-bottom: 5px;
+  }
+  
+  .button-container button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button-container button:hover {
+    background-color: #06611a;
+  }
+  
+  .program-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0px;
+  }
+  
+  .program-form-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px ;
+    padding: 20px;
+    background-color: #9f6262;
+    border: 1px solid #ddd;
+    box-shadow: 0 10 10px rgba(0, 0, 1, 0.1);
+  }
+  /* ProgramList.css */
+  
+  .program-list {
+    margin: 20px;
+    margin-left: 90px;
+  }
+  .program-list h2{
+    align-content: center;
+    margin-left: 180px;
+  }
+  .program-card {
+    border: 1px solid #d5b4b4;
+    background-color: #e6d7d7;
+    width: 500px;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .program-card:hover {
+    background-color: #d48989;
+  }
+  
+  .program-card h3 {
+    margin-bottom: 10px;
+    text-align: center;
+
+  }
+  
+ /* ProgramForm.css */
+
+.program-form-container {
+    
+    height: fit-content;
+    padding: 10px;
+    background-color: #e1c9c9;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  
+  .program-form-container h2 {
+    align-content: center;
+    font-size: 24px;
+    margin-bottom: 60px;
+    text-align: center;
+    color: #333;
+    margin-top: -10px;
+  }
+  
+  .label-input-container {
+    margin-bottom: 15px;
+  }
+  
+  .label-input-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .label-input-container input,
+  .label-input-container select,
+  .label-input-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 50px;
+  }
+  
+  .label-input-container textarea {
+    resize: vertical;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    flex: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button-container button:nth-child(2) {
+    background-color: #e74c3c; /* Delete button color */
+  }
+  
+  .button-container button:nth-child(3) {
+    background-color: #3498db; /* Update button color */
+    color: #fff;
+  }
+  
+  .button-container button:hover {
+    background-color: #2c3e50; /* Hover color for all buttons */
+  }
+  
+  /* Add more styling as needed */
+  
+  
+  /* ProgramDetails.css */
+  
+  .program-details {
+    margin: 20px;
+    margin-top: 30px;
+  }
+  
+  .program-details h2 {
+    margin-bottom: 10px;
+    
+  }
+  
+  .program-details div {
+    margin-bottom: 10px;
+  }
+  
+  .program-details strong {
+    margin-right: 10px;
+    
+  }
+  
+  .program-details button {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .program-details button:hover {
+    background-color: #2980b9;
+  }
+  
