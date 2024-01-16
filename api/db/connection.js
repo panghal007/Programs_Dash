@@ -17,5 +17,6 @@ const sequelize = new Sequelize('heroproject', 'admin', 'YoSR7o67IbmgQh3dXCyD083
   
 
 // });
+///
 
 module.exports = sequelize;
