@@ -12,8 +12,7 @@ const userAuth = require('../middleware/userAuth');
 // Handle signup form submission
 router.post('/signup', userAuth.saveUser, async (req, res, next) => {
     try {
-        // Your existing signup logic
-        //console.log(req.body);
+        
         await userController.signup(req, res);
         // Send a JSON response for successful signup
         res.json({ success: true });
