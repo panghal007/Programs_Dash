@@ -18,7 +18,7 @@ router.post('/signup', userAuth.saveUser, async (req, res, next) => {
         // Send a JSON response for successful signup
         res.json({ success: true });
     } catch (error) {
-        next(error); // Pass the error to the error handling middleware
+        
         // res.status(500).json({msg:error});
     }
 });
