@@ -1,16 +1,15 @@
+
 const express = require('express');
 const router = express.Router();
 const programController = require('../controllers/programController');
 const authMiddleware = require('../middleware/authMiddleware');
 
+// Apply authMiddleware to secure routes
 router.use(authMiddleware);
 
-
-router.get('/', authMiddleware, programController.getAllPrograms);
-router.post('/', authMiddleware, programController.createProgram);
-router.put('/:id', authMiddleware, programController.updateProgram);
-
-router.delete('/:id', authMiddleware, programController.deleteProgram);
-// router.post('/createProgram', authMiddleware, programController.createNewProgram);
+router.get('/', programController.getAllPrograms);
+router.post('/', programController.createProgram);
+router.put('/:id', programController.updateProgram);
+router.delete('/:id', programController.deleteProgram);
 
 module.exports = router;

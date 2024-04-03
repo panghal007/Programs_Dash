@@ -2,6 +2,8 @@
 const express = require("express");
 const sequelize = require("../db/connection");
 //Assigning db.users to User variable
+const jwt = require("jsonwebtoken");
+
 const { DataTypes } = require("sequelize");
 const User = require("../models/userModel")(sequelize, DataTypes);
 

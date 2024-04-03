@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './signup.css';
-
+import AnimatedPage from "../components/AnimatedPage.jsx";
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -47,10 +47,13 @@ const Signup = () => {
 
 
     return (
-        <div>
-            <h1>SignUp Page</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
+        <AnimatedPage>
+        <div className="parent">
+        {/* <div id="circle"></div> */}
+        <div className="signup">
+            <h1>Register</h1>
+            <form className="signup-form" onSubmit={handleSubmit}>
+                <label className="label-username" htmlFor="username">Username:</label>
                 <input
                     type="text"
                     id="username"
@@ -61,7 +64,7 @@ const Signup = () => {
                 />
 
 
-                <label htmlFor="email">Email:</label>
+                <label className="label-email" htmlFor="email">Email:</label>
                 <input
                     type="email"
                     id="email"
@@ -72,7 +75,7 @@ const Signup = () => {
                 />
 
 
-                <label htmlFor="password">Password:</label>
+                <label className="label-password" htmlFor="password">Password:</label>
                 <input
                     type="password"
                     id="password"
@@ -83,12 +86,15 @@ const Signup = () => {
                 />
 
 
-                <button type="submit">Sign Up</button>
+                <button type="submit" className="signup-button">Sign Up</button>
 
 
-                <p>Already have an account? <Link to="/login">Login</Link></p>
+                <p>Already have an account? <Link to="/login" className="link">Login</Link></p>
             </form>
         </div>
+        <h5>@UniquePanghal</h5>
+        </div>
+        </AnimatedPage>
     );
 };
 

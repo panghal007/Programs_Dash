@@ -4,9 +4,12 @@ import ProgramList from './ProgramList';
 import ProgramForm from './ProgramForm';
 import programApi from '../api/programApi';
 import ProgramDetails from './ProgramDetails'; 
+
+
 import { useUserContext } from '../UserContext';
 import './ProgramsDashboard.css'; 
-
+import Navbar from "./navbar";
+import AnimatedPage from "./AnimatedPage";
 
 const ProgramsDashboard = () => {
   const [programs, setPrograms] = useState([]);
@@ -101,9 +104,19 @@ const ProgramsDashboard = () => {
 
 
   return (
-    <div className="programs-dashboard-container">
-      <div className="programs-dashboard" style={{ height: '100vh', display: 'flex' }}>
-        <div className="left-section" style={{ flex: '0 0 20%', padding: '20px' }}>
+    <AnimatedPage>
+
+    <div className="top">
+      {/* <img src="../public/back.avif" className="back--image"/> */}
+      <div className="my-head">
+      <Navbar />
+      </div>
+    
+    {/* <div className="programs-dashboard-container"> */}
+      <div className="programs-dashboard" >
+      
+        <div className="left-section" >
+        {/* // style={{ flex: '0 0 10%', padding: '20px' }}> */}
           <h1>Welcome, {user?.username || 'Guest'}!</h1>
           <div className="input-container">
             <input
@@ -114,9 +127,9 @@ const ProgramsDashboard = () => {
             />
           </div>
 
-          <div className="input-container">
+          <div >
             <label>Filter by Domain:</label>
-            <select value={selectedDomain} onChange={(e) => handleDomainFilter(e.target.value)}>
+            <select className="domain-select"value={selectedDomain} onChange={(e) => handleDomainFilter(e.target.value)}>
               <option value="">All Domains</option>
               {availableDomains.map((domain) => (
                 <option key={domain} value={domain}>
@@ -125,25 +138,32 @@ const ProgramsDashboard = () => {
               ))}
             </select>
           </div>
-
+          { user  &&(
           <div className="button-container">
+            <a href="#form">
             <button onClick={handleToggleForm}>{isFormVisible ? 'Hide Form' : 'Add Program'}</button>
-          </div>
+            </a>
+            
+          </div>)}
         </div>
 
-        <div className="middle-section" style={{ flex: '0 0 60%', padding: '20px' }}>
-          <div className="program-list-grid">
+        <div className="middle-section" >
+        {/* style={{ flex: '0 0 60%', padding: '20px' }} */}
+          {/* <div className="program-list-grid"> */}
             <ProgramList programs={filteredPrograms} onSelectProgram={handleSelectProgram} />
-          </div>
+          {/* </div> */}
         </div>
 
-        <div className="right-section" style={{ flex: '0 0 20%', padding: '20px' }}>
+        <div className="right-section" >
+        {/* style={{ flex: '0 0 20%', padding: '20px' }} */}
           <ProgramDetails program={selectedProgram} onEdit={handleEdit} />
         </div>
-      </div>
+      
 
+      
+      </div>
       {isFormVisible && (
-        <div className="program-form-section">
+        <div id="form"className="program-form-section">
           <ProgramForm
             program={selectedProgram}
             onCreateProgram={handleCreateProgram}
@@ -154,127 +174,34 @@ const ProgramsDashboard = () => {
             isEditMode={isEditing}
           />
         </div>
+
       )}
+    {/* </div> */}
+    <div id="footer" className="footer">
+            {/* <img src="download.png" className="header--image"/> */}
+            <div className='foot-child1'>
+            <h1>Programs Dashboard
+              {/* <ReactTyped strings={["Programs Dashboard"]}
+                          typeSpeed={50}
+                          cursorChar="#"
+                          showCursor={false}/> */}
+            </h1>
+            <h3>-by Unique Panghal</h3> 
+            </div>
+            
+            <div className="foot-child2">
+            <h2>Get in Touch:</h2> 
+            <a href="https://github.com/panghal007"><img src="gihub2.png"  /></a>
+            <a href="https://www.linkedin.com/in/uniquepanghal/"><img className="img2" src="linkedin.jpg" /></a>    
+            {/* <h4>-by Unique Panghal</h4>  */}
+                
+            </div>
+        </div>
     </div>
+    </AnimatedPage>
+
+
   );
 };
 
 export default ProgramsDashboard;
-
-
-// import React, { useState, useEffect } from 'react';
-// import ProgramList from './ProgramList';
-// import ProgramForm from './ProgramForm';
-// import programApi from '../api/programApi';
-
-// const ProgramsDashboard = () => {
-//   const [programs, setPrograms] = useState([]);
-//   const [filteredPrograms, setFilteredPrograms] = useState([]);
-
-//   const [selectedProgram, setSelectedProgram] = useState(null);
-//   const [searchTerm, setSearchTerm] = useState('');
-  
-
-// //   useEffect(() => {
-// //     console.log('Fetching programs based on search term:', searchTerm);
-
-// //     const fetchPrograms = async () => {
-// //       const programsData = await programApi.getAllPrograms(searchTerm);
-// //       console.log('Fetched Programs:', programsData);
-
-// //       setPrograms(programsData);
-// //     };
-// //     fetchPrograms();
-// //   }, [searchTerm]);
-
-// //   const handleSelectProgram = (program) => {
-// //     setSelectedProgram(program);
-// //   };
-// useEffect(() => {
-//     const fetchPrograms = async () => {
-//       const programsData = await programApi.getAllPrograms();
-//       setPrograms(programsData);
-//     };
-//     fetchPrograms();
-//   }, []);
-
-//   useEffect(() => {
-//     // Filter programs based on the search term
-//     const filtered = programs.filter((program) =>
-//       program.name.toLowerCase().includes(searchTerm.toLowerCase())
-//     );
-//     setFilteredPrograms(filtered);
-//   }, [searchTerm, programs]);
-
-//   const handleSelectProgram = (program) => {
-//     setSelectedProgram(program);
-//   };
-
-//   const handleCreateProgram = async (programData) => {
-//     console.log('Creating Program:', programData);
-
-//     await programApi.createProgram(programData);
-//     const updatedPrograms = await programApi.getAllPrograms();
-//     setPrograms(updatedPrograms);
-//   };
-
-//   const handleUpdateProgram = async (programData) => {
-//     await programApi.updateProgram(programData);
-//     const updatedPrograms = await programApi.getAllPrograms();
-//     setPrograms(updatedPrograms);
-//     setSelectedProgram(null);
-//   };
-
-//   const handleDeleteProgram = async (programId) => {
-//     await programApi.deleteProgram(programId);
-//     const updatedPrograms = await programApi.getAllPrograms();
-//     setPrograms(updatedPrograms);
-//   };
-// //   const handleSearchChange = (e) => {
-// //     setSearchTerm(e.target.value);
-// //   };
-// //   const filteredPrograms = programs.filter((program) =>
-// //   program.name.toLowerCase().includes(searchTerm.toLowerCase())
-
-
-// //   return (
-// //     <div>
-// //         <input  type="text" placeholder="Search by name" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-// //       {/* <ProgramList programs={programs} onSelectProgram={handleSelectProgram} /> */}
-// //       <ProgramList programs={filteredPrograms} onSelectProgram={handleSelectProgram} />
-
-// //       <ProgramForm
-// //         program={selectedProgram}
-// //         onCreateProgram={handleCreateProgram}
-// //         onUpdateProgram={handleUpdateProgram}
-// //         onDeleteProgram={handleDeleteProgram}
-// //       />
-// //     </div>
-// //   );
-// return (
-//     <div style={{ display: 'flex' }}>
-//       {/* Left Column (Search Bar) */}
-//       <div style={{ width: '30%', padding: '20px' }}>
-//         <input
-//           type="text"
-//           placeholder="Search by name"
-//           value={searchTerm}
-//           onChange={(e) => setSearchTerm(e.target.value)}
-//         />
-//       </div>
-
-//       {/* Right Column (Program List and Form) */}
-//       <div style={{ width: '70%', padding: '20px' }}>
-//         <ProgramList programs={filteredPrograms} onSelectProgram={handleSelectProgram} />
-//         <ProgramForm
-//           program={selectedProgram}
-//           onCreateProgram={handleCreateProgram}
-//           onUpdateProgram={handleUpdateProgram}
-//           onDeleteProgram={handleDeleteProgram}
-//         />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProgramsDashboard;

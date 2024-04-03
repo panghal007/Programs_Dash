@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useUserContext } from '../UserContext';
+import { useUserContext } from '../UserContext.jsx';
 import './login.css'; 
-
+import AnimatedPage from "../components/AnimatedPage.jsx";
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -38,7 +38,7 @@ const Login = () => {
           login(userData.username);
   
           // Redirect to the program dashboard
-          navigate('/program');
+          navigate('/');
         } else {
           // Handle login error
           console.error('Login failed');
@@ -49,12 +49,16 @@ const Login = () => {
     };
   
     return (
-      <div>
-        <h1>Login Page</h1>
-        <form onSubmit={handleSubmit}>
+      <AnimatedPage>
+      <div className="parent">
+      {/* <div id="circle"></div> */}
+      <div className="login">
+        <h1>Login</h1>
+        <form className="login-form"onSubmit={handleSubmit}>
           
-          <label htmlFor="email">Email:</label>
+          <label className="label-email" htmlFor="email">Email:</label>
           <input
+            className="input"
             type="email"
             id="email"
             name="email"
@@ -63,7 +67,7 @@ const Login = () => {
             required
           />
   
-          <label htmlFor="password">Password:</label>
+          <label className="label-password" htmlFor="password">Password:</label>
           <input
             type="password"
             id="password"
@@ -73,13 +77,16 @@ const Login = () => {
             required
           />
   
-          <button type="submit">Login</button>
+          <button type="submit" className="login-button">Login</button>
   
           <p>
-            Don't have an account? <Link to="/signup">Sign Up</Link>
+            Don't have an account? <Link to="/signup" className="link">Sign Up</Link>
           </p>
         </form>
       </div>
+      <h5>@UniquePanghal</h5>
+      </div>
+      </AnimatedPage>
     );
   };
   

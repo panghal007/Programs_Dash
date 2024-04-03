@@ -1,31 +1,52 @@
 /* login.css */
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+
+.parent{
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
+    background-image: url("/public/login_back.jpg");
+    background-size: cover;
+    width: 100vw;
     height: 100vh;
+    font-family: 'Baloo 2';
 }
 
-form {
-    background-color: #fff;
+.parent h5{
+    position: absolute;
+    bottom:0;
+    right: 0;
+    opacity: 0.4;
+}
+.login h1{
+    margin-bottom: 20px;
+    color:black;
+    text-align: center;
+    opacity: 0.6;
+}
+.login-form{
+    background-color:black;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-label {
+.login-form label{
+    opacity: 0.6;
+    color:black;
     display: block;
     margin-bottom: 8px;
 }
 
-input {
+
+
+.login-form p{
+    color: #8C8279;
+    text-align: center;
+}
+.login-form input{
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -33,9 +54,9 @@ input {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
-button {
-    background-color: #4caf50;
+.login-button{
+    background-color:#007684;
+    margin-bottom: 10px;
     color: white;
     padding: 14px 20px;
     border: none;
@@ -44,21 +65,21 @@ button {
     width: 100%;
     transition: background-color 0.3s ease; 
 }
-
-button:hover {
-    background-color: #45a049;
+#circle{
+    transition:all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    z-index: 9999;
+    background-color:#C53F00;
+    position: absolute;
+    left:0;
+    top:0;
+  }
+.link{
+    color: #007684;
 }
 
-p {
-    margin-top: 15px;
-    text-align: center;
-}
 
-p a {
-    color: #3498db;
-    text-decoration: none;
-}
 
-p a:hover {
-    text-decoration: underline;
-}
+

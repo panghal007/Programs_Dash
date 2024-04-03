@@ -11,9 +11,9 @@ getAllPrograms: async (searchTerm) => {
     const response = await fetch(`${BASE_URL}/programs${queryParams}`);
     const data = await response.json();
     return data;
-  },
+},
 
- createProgram: async (programData) => {
+createProgram: async (programData) => {
     const response = await fetch(`${BASE_URL}/programs`, {
         method: 'POST',
         headers: {
@@ -23,9 +23,9 @@ getAllPrograms: async (searchTerm) => {
     });
     const data = await response.json();
     return data;
- },
+},
 
-  updateProgram: async (programData) => {
+updateProgram: async (programData) => {
     const response = await fetch(`${BASE_URL}/programs/${programData.id}`, {
       method: 'PUT',
       headers: {
@@ -35,9 +35,9 @@ getAllPrograms: async (searchTerm) => {
     });
     const data = await response.json();
     return data;
-  },
+},
 
-  deleteProgram: async (programId) => {
+deleteProgram: async (programId) => {
     const response = await fetch(`${BASE_URL}/programs/${programId}`, {
       method: 'DELETE',
     });

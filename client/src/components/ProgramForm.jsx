@@ -13,15 +13,10 @@ const ProgramForm = ({ program, onCreateProgram, onUpdateProgram, onDeleteProgra
     setFormData(program || {});
   }, [program]);
 
-  // useEffect(() => {
-  //   // Autofill the form with the user's username if they are the owner
-  //   if (user.username === ownerUsername ) {
-  //     setFormData( program || {});
-  //   }
-  // }, [program]);
+
   
   const handleSave = () => {
-    // setFormData({ ...formData, ownerUsername: user });
+    
     console.log(user);
     // setFormData({ ...formData, ownerUsername: user?.username || '' });
     const programData = { ...formData, ownerUsername }; // Include ownerUsername in the data
@@ -44,14 +39,13 @@ const ProgramForm = ({ program, onCreateProgram, onUpdateProgram, onDeleteProgra
     
   };
   const handleUpdate = () => {
-    // Add validation or confirmation logic if needed before updating
     handleSave();
   };
   
   
 
   return (
-    <div className="program-form-container" style={{ maxHeight:'0vh', padding: '20px' }}>
+    <div className="program-form-container" >
       <h2>Programs Form</h2>
       <label>Name:*</label>
       <input type="text" value={formData?.name || ''} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
@@ -75,6 +69,7 @@ const ProgramForm = ({ program, onCreateProgram, onUpdateProgram, onDeleteProgra
 
       <label>Registrations:*</label>
       <select value={formData.registrations} onChange={(e) => setFormData({ ...formData, registrations: e.target.value })}>
+      <option value="null">---Select---</option>
         <option value="open">Open</option>
         <option value="closed">Closed</option>
       </select>
@@ -84,6 +79,7 @@ const ProgramForm = ({ program, onCreateProgram, onUpdateProgram, onDeleteProgra
 
       <label>Placement Assurance:*</label>
       <select value={formData.placementAssurance} onChange={(e) => setFormData({ ...formData, placementAssurance: e.target.value })}>
+        <option value="null">---Select---</option>
         <option value="true">Yes</option>
         <option value="false">No</option>
       </select>
@@ -109,7 +105,7 @@ const ProgramForm = ({ program, onCreateProgram, onUpdateProgram, onDeleteProgra
       <label>Eligibility Criteria:*</label>
       <textarea value={formData.eligibilityCriteria} onChange={(e) => setFormData({ ...formData, eligibilityCriteria: e.target.value })}></textarea>
 
-      <button onClick={handleSave} style={{marginLeft:'400px',marginTop:'20px', maxWidth:'100px'}}>Save</button>
+      <button onClick={handleSave} style={{marginTop:'20px', maxWidth:'100px'}}>Save</button>
       <button onClick={handleDelete} style={{margin:'10px', maxWidth:'100px'}}>Delete</button>
       {formData && formData.id && (
         <button onClick={handleUpdate} style={{margin:'0px', maxWidth:'100px'}}>Update</button>

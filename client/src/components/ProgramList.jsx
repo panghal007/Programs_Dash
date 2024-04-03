@@ -4,7 +4,7 @@ import './ProgramsDashboard.css';
 
 const ProgramList = ({ programs, onSelectProgram }) => {
   return (
-    <div className="program-list">
+    <div className="program-list" style= {{overflow: 'scroll' , height: '70vh', width :'45vw' }}>
       <h2>ProgramsList!!</h2>
       {programs.length > 0 ? (
         programs.map((program) => (
