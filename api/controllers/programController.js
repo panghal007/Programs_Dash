@@ -40,16 +40,16 @@ const createProgram = async (req, res) => {
   }
 };
 
-// const createNewProgram = async (req, res) => {
-//   try {
-//     console.log("Received Program Data:", req.body);
+const createNewProgram = async (req, res) => {
+  try {
+    console.log("Received Program Data:", req.body);
 
-//     const newProgram = await Program.create(req.body);
-//     res.json(newProgram);
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// };
+    const newProgram = await Program.create(req.body);
+    res.json(newProgram);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 
 const updateProgram = async (req, res) => {
   try {

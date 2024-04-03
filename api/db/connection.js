@@ -11,14 +11,20 @@ require("dotenv").config();
 //     },
 //   },
 // });
-const sequelize = new Sequelize('heroproject', 'admin', 'rootuser', {
-  host: 'localhost',
-  dialect: 'postgres'
+// const sequelize = new Sequelize('heroproject', 'admin', 'rootuser', {
+//   host: 'localhost',
+//   dialect: 'postgres'
+// });
+const sequelize = new Sequelize('programdashboard', 'admin', '0t1sDFaMMDDjNll5jiF9l1zSFm5iWacv', {
+  host: 'dpg-co6k6i8l6cac73aagab0-a.singapore-postgres.render.com',
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: false,
+      rejectUnauthorized: false,
+    },
+  },
 });
-// const sequelize = new Sequelize(process.env.DB_URL, {
-//   dialect: "postgres",
-//   logging: false,
-  
 
 // });
 ///
