@@ -4,10 +4,11 @@ import './ProgramsDashboard.css';
 
 const ProgramList = ({ programs, onSelectProgram }) => {
   return (
-    <div className="program-list" style= {{overflow: 'scroll' , height: '70vh', width :'45vw' }}>
+    <div className="program-list" style= {{overflow: 'scroll' , height: '70vh' }}>
       <h2>ProgramsList!!</h2>
       {programs.length > 0 ? (
         programs.map((program) => (
+          <a href={window.matchMedia("(max-width: 600px)").matches ? '#detail' : null} className='link1'>
           <div
             key={program.id}
             className="program-card"
@@ -21,6 +22,7 @@ const ProgramList = ({ programs, onSelectProgram }) => {
               <strong>Price:</strong> INR {program.price}
             </p>
           </div>
+          </a>
         ))
       ) : (
         <p>No programs available.</p>

@@ -154,7 +154,7 @@ const ProgramsDashboard = () => {
           {/* </div> */}
         </div>
 
-        <div className="right-section" >
+        <div id="detail" className="right-section" >
         {/* style={{ flex: '0 0 20%', padding: '20px' }} */}
           <ProgramDetails program={selectedProgram} onEdit={handleEdit} />
         </div>

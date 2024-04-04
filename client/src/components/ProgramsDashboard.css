@@ -128,6 +128,7 @@ ul {
   flex: 0 0 60%; /* For smaller screens, full width */
   padding: 20px;
   margin-top: 30px;
+  width: 45px;
   
 }
 
@@ -139,12 +140,14 @@ ul {
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 9%;
+ 
 }
 
 .program-list h2 {
   text-align: center;
   margin-bottom: 20px;
 }
+
 
 .program-card {
   background-color: #e8d8dd;
@@ -158,6 +161,7 @@ ul {
   text-align: center;
   box-shadow: 0 0 5px;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .program-card:hover {
@@ -190,6 +194,9 @@ ul {
 }
 
 /* Program Form */
+#form{
+  padding-top: 100px;
+}
 .program-form-section{
   
   height: 100%;
@@ -322,4 +329,60 @@ ul {
   .middle-section {
     flex: 0 0 50%; /* 50% width for medium screens and above */
   }
+}
+@media (max-width:600px) {
+  /* .header{
+    background-color: #FFC801;
+    color: #ffffff;
+    
+    height: 60px;
+  }
+  .header h2{
+    font-size: 5.2vw;
+  }
+  .nav-child2 h4{
+    font-size: 4vw;
+    display: none;
+  }
+  .nav-child2 button{
+    padding: 0px;
+  } */
+  .programs-dashboard{
+    height: calc(100% - 60px);
+    flex-direction: column;
+  }
+  /* .middle-section{
+    width: 100%;
+  } */
+  .middle-section{
+    width: 100%;
+  }
+  #detail{
+    padding-top: 100px;
+  }
+  .program-list{
+    width: 100%;
+    margin-right: 0;
+  }
+  .right-section{
+    margin-bottom: 10vh;
+  }
+  .foot-child1 h1{
+    font-size: 3vh;
+    text-align: start;
+    padding-left: 2vw;
+  }
+  .foot-child1 h3{
+    text-align: center;
+  }
+  .foot-child2 h2{
+   font-size: 2.5vh;
+  }
+  
+  
+ 
+
+
+
+  
 }

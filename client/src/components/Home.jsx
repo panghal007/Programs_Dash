@@ -38,7 +38,7 @@ const Home = () => {
     <div className="top">
       {/* <div id="circle"></div> */}
       
-      <div className="header">
+      <div className="header1">
       <Navbar />
             
       </div>
